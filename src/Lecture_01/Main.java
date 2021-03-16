@@ -7,5 +7,12 @@ public class Main {
 		
 		firstTimer.start();
 		secondTimer.start();
+		
+		Complex function = new Complex();
+		int[] results = Dispatcher.execute(function, 100);
+		
+		for(int i = 0; i < results.length; i++) {
+			System.out.println("index: " + i + " with value: " + results[i]);
+		}
 	}
 }

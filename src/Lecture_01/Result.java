@@ -1,19 +1,15 @@
 package Lecture_01;
 
-public class Result extends Thread implements F {
+public class Result {
 	private int[] results;
 	private int counter;
 	
-	public void run() {
-		
+	public Result(int lenght) {
+		results = new int[lenght];
+		counter = 0;
 	}
 	
-	public Result(int index) {
-		results = new int[index - 1];
-		counter = index - 1;
-	}
-	
-	public void AddResult(int index, int result) {
+	public synchronized void AddResult(int index, int result) {
 		results[index] = result;
 		
 		counter++;
@@ -29,9 +25,5 @@ public class Result extends Thread implements F {
 			
 		}
 		return results;
-	}
-	
-	public int f(int x) {
-		return x^2;
 	}
 }
